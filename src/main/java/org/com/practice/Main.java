@@ -1,7 +1,7 @@
-package org.example;
+package org.com.practice;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello wold!");
+        System.out.println("Hello world!");
     }
 }
