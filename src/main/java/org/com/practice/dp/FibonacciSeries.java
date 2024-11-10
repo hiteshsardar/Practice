@@ -4,14 +4,14 @@ package org.com.practice.dp;
 import java.util.HashMap;
 
 public class FibonacciSeries {
-    public static long fibRecursive(int no) {
+    private static long fibRecursive(int no) {
         if(no == 0 || no == 1)
             return no;
 
         return fibRecursive(no - 1) + fibRecursive(no - 2);
     }
 
-    public static long fibMemoization(int no, HashMap<Integer, Long> memo) {
+    private static long fibMemoization(int no, HashMap<Integer, Long> memo) {
         if(no == 0 || no == 1)
             return no;
 

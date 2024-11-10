@@ -3,7 +3,7 @@ package org.com.practice.dp;
 import java.util.HashMap;
 
 public class TribonacciSeries {
-    public static long tribonacciRecursive(int no) {
+    private static long tribonacciRecursive(int no) {
         if(no == 0 || no == 1)
             return 0;
         if (no == 2)
@@ -12,7 +12,7 @@ public class TribonacciSeries {
         return tribonacciRecursive(no - 1) + tribonacciRecursive(no - 2) + tribonacciRecursive(no - 3);
     }
 
-    public static long tribonacciMemoization(int no, HashMap<Integer, Long> memo) {
+    private static long tribonacciMemoization(int no, HashMap<Integer, Long> memo) {
         if(no == 0 || no == 1)
             return 0;
         if (no == 2)
