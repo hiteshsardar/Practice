@@ -1,4 +1,4 @@
-package org.com.practice.dp;
+package org.com.practice.practice.dp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
