@@ -1,10 +1,12 @@
 package org.com.practice.dp;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CountPaths {
-    public static int countPathsRecursive(int row, int col, List<List<String>> grid) {
+    private static int countPathsRecursive(int row, int col, List<List<String>> grid) {
         if(row == grid.size() || col == grid.get(0).size())
             return 0;
 
@@ -16,6 +18,25 @@ public class CountPaths {
 
 
         return countPathsRecursive(row + 1, col, grid) + countPathsRecursive(row, col + 1, grid);
+    }
+
+    private static int countPathsMemoization(int row, int col, List<List<String>> grid, Map<List<Integer>, Integer> memo) {
+        if(row == grid.size() || col == grid.get(0).size())
+            return 0;
+
+        if(grid.get(row).get(col).equals("X"))
+            return 0;
+
+        if(row == grid.size() - 1 && col == grid.get(0).size() - 1)
+            return 1;
+
+        List<Integer> key = List.of(row, col);
+        if(memo.containsKey(key))
+            return memo.get(key);
+
+        int result =  countPathsMemoization(row + 1, col, grid, memo) + countPathsMemoization(row, col + 1, grid, memo);
+        memo.put(key, result);
+        return result;
     }
 
     public static void main(String[] args) {
@@ -40,5 +61,6 @@ public class CountPaths {
 
 
         System.out.println("No of paths " + countPathsRecursive(0, 0, grid));
+        System.out.println("No of paths " + countPathsMemoization(0, 0, grid, new HashMap<>()));
     }
 }
