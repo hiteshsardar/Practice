@@ -8,5 +8,7 @@ public class GetClassInstance {
         SingletonClass instance1 = SingletonClass.getInstance();
         SingletonClass instance2 = SingletonClass.getInstance();
         System.out.println(instance1 == instance2);
+
+        my_cmmap.put("abc", "abc");
     }
 }

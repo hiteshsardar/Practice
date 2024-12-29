@@ -1,6 +1,8 @@
 package org.com.practice.practice.singleton;
 
+
 public class SingletonClass {
+
     private static SingletonClass instance = null;
     private SingletonClass() {
     }
